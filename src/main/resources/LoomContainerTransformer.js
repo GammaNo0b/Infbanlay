@@ -43,6 +43,7 @@ function initializeCoreMod() {
     Opcodes = Java.type("org.objectweb.asm.Opcodes");
     MethodInsnNode = Java.type("org.objectweb.asm.tree.MethodInsnNode");
 
+    // instead of specifing the methods to transform, iterate through all methods in the class node and search for the method by it's descriptor to avoid name obfuscation
     return {
         "LoomContainer.onCraftMatrixChanged": {
             "target": {
